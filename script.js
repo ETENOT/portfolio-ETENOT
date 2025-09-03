@@ -1,57 +1,90 @@
-// ===== Consts =====
+// Elements
 const html = document.documentElement;
 const themeBtn = document.querySelector('.theme-toggle');
-const yearSpan = document.getElementById('year');
 const menuBtn = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
-const cvBtn = document.getElementById('cv-btn');
+const cvButtons = document.querySelectorAll('#cv-btn, #cv-btn-hero');
 const toast = document.getElementById('toast');
+const yearEl = document.getElementById('year');
 
-// ===== Year =====
-if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+// Year
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// ===== Theme (persist) =====
-const savedTheme = localStorage.getItem('theme') || 'light';
-html.setAttribute('data-theme', savedTheme);
-updateThemeIcon(savedTheme);
-
-function updateThemeIcon(theme){
-  if (!themeBtn) return;
-  themeBtn.innerHTML = theme === 'dark'
-    ? '<i class="fa-solid fa-sun"></i><span class="sr-only">Passer en clair</span>'
-    : '<i class="fa-solid fa-moon"></i><span class="sr-only">Passer en sombre</span>';
+// Theme (persist)
+const saved = localStorage.getItem('theme') || 'dark';
+html.setAttribute('data-theme', saved);
+updateThemeIcon(saved);
+function updateThemeIcon(t){
+  if(!themeBtn) return;
+  themeBtn.innerHTML = t === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
 }
-themeBtn?.addEventListener('click', () => {
-  const current = html.getAttribute('data-theme');
-  const next = current === 'light' ? 'dark' : 'light';
+themeBtn?.addEventListener('click', ()=>{
+  const current = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  const next = current === 'dark' ? 'light' : 'dark';
   html.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
   updateThemeIcon(next);
 });
 
-// ===== Mobile menu =====
-menuBtn?.addEventListener('click', () => {
+// Mobile menu
+menuBtn?.addEventListener('click', ()=>{
   const open = nav.classList.toggle('open');
-  menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  menuBtn.setAttribute('aria-expanded', open?'true':'false');
 });
 
-// Close menu when clicking a link (mobile)
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => nav.classList.remove('open'));
-});
+// Close mobile menu on nav click
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', ()=> nav.classList.remove('open')));
 
-// ===== Smooth “reveal” on scroll =====
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+// Toast when CV downloaded
+cvButtons.forEach(btn => {
+  btn?.addEventListener('click', (e) => {
+    showToast('📄 Téléchargement du CV… Merci !');
+    // allow the download to proceed; toast is only visual
   });
-},{threshold:.14});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+});
+function showToast(text){
+  if(!toast) return;
+  toast.textContent = text;
+  toast.classList.add('show');
+  setTimeout(()=> toast.classList.remove('show'), 2400);
+}
 
-// ===== Hero small typing effect (optional basic) =====
-// You can expand this later if you want a full typewriter effect.
+// Reveal + animate skill bars when visible
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('in');
+      // animate skill bars inside
+      const bars = entry.target.querySelectorAll('.skill-bar');
+      bars.forEach(bar => {
+        const percent = bar.dataset.percent || bar.getAttribute('data-percent') || 0;
+        const filler = bar.querySelector('i');
+        if(filler) filler.style.width = percent + '%';
+      });
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.15});
 
-// ===== Contact form (simple mailto fallback) =====
+document.querySelectorAll('.section, .hero').forEach(el => observer.observe(el));
+
+// Profile image lightbox
+const profile = document.getElementById('profile-pic');
+if(profile){
+  profile.style.cursor = 'zoom-in';
+  profile.addEventListener('click', ()=>{
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.85);z-index:9999';
+    const img = document.createElement('img');
+    img.src = profile.src; img.alt = profile.alt;
+    img.style.maxWidth = '92%'; img.style.maxHeight = '92%'; img.style.borderRadius='12px';
+    overlay.appendChild(img);
+    overlay.addEventListener('click', ()=> overlay.remove());
+    document.body.appendChild(overlay);
+  });
+}
+
+// Contact form -> mailto fallback
 const form = document.getElementById('contact-form');
 form?.addEventListener('submit', (e)=>{
   e.preventDefault();
@@ -59,34 +92,5 @@ form?.addEventListener('submit', (e)=>{
   const mail = encodeURIComponent(form.email.value.trim());
   const msg  = encodeURIComponent(form.message.value.trim());
   const body = `De: ${name} (%20${mail})%0D%0A%0D%0A${msg}`;
-  window.location.href = `mailto:karimekg92@gmail.com?subject=Contact%20depuis%20le%20portfolio&body=${body}`;
+  window.location.href = `mailto:karimekg92@gmail.com?subject=Contact%20depuis%20portfolio&body=${body}`;
 });
-
-// ===== Toast on CV download =====
-cvBtn?.addEventListener('click', ()=>{
-  showToast('📄 Téléchargement du CV… Merci !');
-});
-function showToast(text){
-  if(!toast) return;
-  toast.textContent = text;
-  toast.classList.add('show');
-  setTimeout(()=>toast.classList.remove('show'), 2200);
-}
-
-// ===== Profile zoom (overlay lightbox) =====
-const profilePic = document.getElementById('profile-pic');
-if (profilePic){
-  const overlay = document.createElement('div');
-  overlay.style.cssText = `
-    display:none;position:fixed;inset:0;z-index:9999;
-    background:rgba(0,0,0,.85);justify-content:center;align-items:center;cursor:zoom-out
-  `;
-  const img = document.createElement('img');
-  img.src = profilePic.src; img.alt = profilePic.alt;
-  img.style.cssText = 'max-width:92%;max-height:92%;border-radius:14px';
-  overlay.appendChild(img);
-  document.body.appendChild(overlay);
-
-  profilePic.addEventListener('click', ()=> overlay.style.display = 'flex');
-  overlay.addEventListener('click', ()=> overlay.style.display = 'none');
-}
