@@ -46,6 +46,45 @@ body{background:var(--bg);color:var(--c200);-webkit-font-smoothing:antialiased}
 .hero-socials{display:flex;gap:12px;margin-top:18px}
 .hero-socials a{font-size:18px}
 
+/* BACKGROUNDS SPÉCIFIQUES */
+.hero-bg {
+  position:absolute;
+  inset:0;
+  background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1800&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  opacity:.5;
+  filter:grayscale(.05);
+  z-index:0;
+}
+
+.about-bg {
+  position:absolute;
+  inset:0;
+  background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1800&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  opacity:.3;
+  filter:grayscale(.05);
+  z-index:0;
+}
+
+.skills-bg {
+  position:absolute;
+  inset:0;
+  background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1800&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  opacity:.3;
+  filter:grayscale(.05);
+  z-index:0;
+}
+
+.section {
+  position:relative;
+  overflow:hidden;
+}
+
 /* QUICK CARD */
 .card{background:var(--glass);border-radius:12px;padding:18px;border:1px solid rgba(193,232,255,0.03);box-shadow:var(--card-shadow)}
 .quick ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}

@@ -12,16 +12,21 @@ burger?.addEventListener('click', () => {
 
 // Toast helper
 const toast = document.getElementById('toast');
+let toastLock = false;
 function showToast(message, ms = 2200){
+  if(toastLock) return;
+  toastLock = true;
   toast.textContent = message;
   toast.classList.add('show');
-  setTimeout(()=> toast.classList.remove('show'), ms);
+  setTimeout(()=>{
+    toast.classList.remove('show');
+    toastLock = false;
+  }, ms);
 }
 
 // CV download: show toast on click (both buttons)
 document.querySelectorAll('#download-cv, #download-cv-2').forEach(btn=>{
-  btn?.addEventListener('click', (e)=>{
-    // allow default download behavior; just show toast
+  btn?.addEventListener('click', ()=>{
     showToast('📄 Téléchargement du CV lancé — merci !');
   });
 });
@@ -44,27 +49,21 @@ function animateSkillBars(){
   document.querySelectorAll('.skill-bar').forEach(bar=>{
     const fill = bar.querySelector('.fill');
     const percent = Number(bar.dataset.percent || 0);
-    // animate width
-    requestAnimationFrame(()=> {
-      fill.style.width = percent + '%';
-    });
-    // add a small label inside/right (if not already)
-    const wrapper = bar.parentElement;
-    if(wrapper){
-      const valBox = wrapper.querySelector('.skill-value');
-      if(valBox){
-        // animate number from 0 to percent
-        let start = 0;
-        const duration = 900;
-        const stepTime = 16;
-        const steps = Math.round(duration / stepTime);
-        const increment = percent / steps;
-        const interval = setInterval(()=>{
-          start = Math.min(percent, +(start + increment).toFixed(1));
-          valBox.textContent = (Math.round(start) + '%');
-          if(start >= percent) clearInterval(interval);
-        }, stepTime);
-      }
+    // delay for smooth effect
+    setTimeout(()=> fill.style.width = percent + '%', 150);
+    // animate number
+    const valBox = bar.parentElement?.querySelector('.skill-value');
+    if(valBox){
+      let start = 0;
+      const duration = 1200;
+      const stepTime = 16;
+      const steps = Math.round(duration / stepTime);
+      const increment = percent / steps;
+      const interval = setInterval(()=>{
+        start = Math.min(percent, +(start + increment).toFixed(1));
+        valBox.textContent = Math.round(start) + '%';
+        if(start >= percent) clearInterval(interval);
+      }, stepTime);
     }
   });
 }
