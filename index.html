@@ -1,31 +1,232 @@
-<section id="accueil" class="hero">
-  <div class="overlay"></div>
-  <div class="container hero-grid">
-    <div>
-      <h1 class="title">Développeur Web & Génie Logiciel</h1>
-      <p class="subtitle">Étudiant en Licence 3 Génie Logiciel à ESGIS Gabon. Passionné par la conception, le développement d'applications et les systèmes d'information.</p>
-      <div class="cta">
-        <a class="btn primary" href="#projets">Voir mes projets</a>
-        <a class="btn ghost" href="#contact">Me contacter</a>
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ETENOT — Portfolio</title>
+  <meta name="description" content="Portfolio — ETENOT KHAYRE Karim Gloire" />
+  <meta name="theme-color" content="#021024" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- TOAST -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">ETENOT <span class="brand-small">Karim</span></div>
+      <nav class="nav">
+        <a href="#hero">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#competences">Compétences</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-bg" aria-hidden></div>
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <p class="eyebrow">Bonjour — je suis</p>
+        <h1 class="hero-name">ETENOT <span>KHAYRE</span></h1>
+        <p class="hero-role">Développeur Web & Génie Logiciel — Licence 3</p>
+        <p class="hero-desc">Je conçois des interfaces propres et développe des backends robustes. Actuellement sur <strong>StageTracker</strong> (en cours).</p>
+
+        <div class="hero-ctas">
+          <a class="btn primary" href="#projets">Voir mes projets</a>
+          <a id="download-cv" class="btn ghost" href="CV_ETENOT.pdf" download>📄 Télécharger CV</a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="mailto:karimekg92@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope" style="color:#C1E8FF"></i></a>
+          <a href="https://github.com/ETENOT" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github" style="color:#000000"></i></a>
+          <a href="https://www.linkedin.com/in/karim-etenot-341033368/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" style="color:#5483B3"></i></a>
+          <a href="https://wa.me/65664690" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- Quick presentation card -->
+        <div class="card quick">
+          <h3>Je fais</h3>
+          <ul>
+            <li><i class="fa-solid fa-code"></i> Développement front-end</li>
+            <li><i class="fa-solid fa-server"></i> Intégration & back-end simple</li>
+            <li><i class="fa-solid fa-network-wired"></i> Réseaux (ACL / VLAN)</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="apropos" class="section-bg">
-  <div class="overlay"></div>
-  <div class="container">
-    <h2 class="section-title">À propos</h2>
-    <p class="section-sub">Qui je suis et ce que je fais.</p>
-    <!-- contenu identique à avant -->
-  </div>
-</section>
+  <!-- A PROPOS -->
+  <section id="apropos" class="section about">
+    <div class="container about-grid">
+      <div class="about-left">
+        <h2>À propos</h2>
+        <p>Je suis <strong>ETENOT KHAYRE Karim Gloire</strong>, étudiant en Licence 3 Génie Logiciel. J'aime créer des applications web performantes et bien architecturées.</p>
+        <p>Objectif : devenir développeur polyvalent capable de concevoir, déployer et maintenir des solutions robustes.</p>
 
-<section id="competences" class="section-bg2">
-  <div class="overlay"></div>
-  <div class="container">
-    <h2 class="section-title">Compétences</h2>
-    <p class="section-sub">Mes compétences techniques et personnelles.</p>
-    <!-- contenu identique à avant -->
-  </div>
-</section>
+        <div class="about-meta">
+          <div><strong>Éducation :</strong> Licence 3 Génie Logiciel (2025 — en cours)</div>
+          <div><strong>Baccalauréat :</strong> 2023 (Série Scientifique)</div>
+          <div><strong>Projet :</strong> StageTracker — en cours</div>
+        </div>
+
+        <a class="btn outline" href="CV_ETENOT.pdf" id="download-cv-2" download>📄 Télécharger mon CV</a>
+      </div>
+
+      <div class="about-right">
+        <!-- ici tu mettras ton image (remplace src par ton lien) -->
+        <div class="profile-wrap">
+          <img id="profile-img" src="profil.jpg" alt="Photo de profil — ETENOT">
+          <div class="profile-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETENCES -->
+  <section id="competences" class="section skills">
+    <div class="container">
+      <h2>Compétences</h2>
+      <p class="muted">Niveau estimé — valeurs animées au scroll</p>
+
+      <div class="skills-grid">
+        <!-- Technique -->
+        <div class="skill-block card">
+          <h3>Techniques</h3>
+          <div class="skill-row">
+            <div class="skill-title">HTML</div>
+            <div class="skill-bar" data-percent="95"><span class="fill"></span></div>
+            <div class="skill-value">95%</div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-title">CSS</div>
+            <div class="skill-bar" data-percent="92"><span class="fill"></span></div>
+            <div class="skill-value">92%</div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-title">JavaScript</div>
+            <div class="skill-bar" data-percent="82"><span class="fill"></span></div>
+            <div class="skill-value">82%</div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-title">PHP</div>
+            <div class="skill-bar" data-percent="75"><span class="fill"></span></div>
+            <div class="skill-value">75%</div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-title">PostgreSQL (PgAdmin 4)</div>
+            <div class="skill-bar" data-percent="78"><span class="fill"></span></div>
+            <div class="skill-value">78%</div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-title">C / C++</div>
+            <div class="skill-bar" data-percent="70"><span class="fill"></span></div>
+            <div class="skill-value">70%</div>
+          </div>
+        </div>
+
+        <!-- Personnelles -->
+        <div class="skill-block card">
+          <h3>Compétences personnelles</h3>
+          <ul class="personal-list">
+            <li>Travail en équipe</li>
+            <li>Organisation & gestion du temps</li>
+            <li>Résolution de problèmes</li>
+            <li>Curiosité & apprentissage rapide</li>
+          </ul>
+
+          <h3 style="margin-top:18px">Outils & environnements</h3>
+          <ul class="tools-list">
+            <li>VSCode · Git · GitHub</li>
+            <li>Figma · Dreamweaver</li>
+            <li>Code::Blocks · Packet Tracer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section id="projets" class="section projects section-dark">
+    <div class="container">
+      <h2>Projets</h2>
+      <p class="muted">Quelques travaux — certains en cours</p>
+
+      <div class="projects-grid">
+        <article class="project card">
+          <div class="badge">En cours</div>
+          <h4>StageTracker</h4>
+          <p>Application web pour la gestion des stages : demandes, suivi et administration.</p>
+          <div class="project-actions">
+            <a href="https://github.com/ETENOT" target="_blank" class="btn ghost">Voir dépôt</a>
+          </div>
+        </article>
+
+        <article class="project card">
+          <div class="badge">Web</div>
+          <h4>Portfolio</h4>
+          <p>Présentation personnelle, mode sombre/clair, responsive et interactions.</p>
+          <div class="project-actions">
+            <a href="#hero" class="btn primary">Vous êtes dessus</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="container contact-grid">
+      <div class="contact-card card">
+        <h3>Contact</h3>
+        <p class="muted">Un projet ? Une question ?</p>
+
+        <div class="contact-links">
+          <a href="mailto:karimekg92@gmail.com"><i class="fa-solid fa-envelope" style="color:#C1E8FF"></i> karimekg92@gmail.com</a>
+          <a href="https://github.com/ETENOT" target="_blank"><i class="fa-brands fa-github" style="color:#000000"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/karim-etenot-341033368/" target="_blank"><i class="fa-brands fa-linkedin" style="color:#5483B3"></i> LinkedIn</a>
+          <a href="https://wa.me/65664690" target="_blank"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i> WhatsApp</a>
+        </div>
+      </div>
+
+      <form id="contact-form" class="contact-form card" onsubmit="event.preventDefault(); window.location.href = 'mailto:karimekg92@gmail.com?subject=Contact&body=' + encodeURIComponent(document.getElementById('contact-msg').value);">
+        <label for="contact-name">Nom</label>
+        <input id="contact-name" name="name" placeholder="Ton nom" required>
+
+        <label for="contact-email">Email</label>
+        <input id="contact-email" name="email" type="email" placeholder="Ton email" required>
+
+        <label for="contact-msg">Message</label>
+        <textarea id="contact-msg" placeholder="Ton message..." required></textarea>
+
+        <button class="btn primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> ETENOT KHAYRE Karim Gloire — Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
