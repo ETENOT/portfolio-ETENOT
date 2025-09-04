@@ -1,17 +1,18 @@
 /* Palette: #021024, #052659, #5483B3, #7DA0CA, #C1E8FF */
-:root{
-  --c900:#021024;
-  --c800:#052659;
-  --c600:#5483B3;
-  --c500:#7DA0CA;
-  --c200:#C1E8FF;
+:root {
+  --c900: #16162F;  /* Couleur principale très sombre */
+  --c800: #242F49;  /* Deuxième couleur sombre */
+  --c600: #384358;  /* Ton moyen */
+  --accent: #FFA586; /* Accent principal (orange pâle) */
+  --accent2: #B51A2B; /* Accent secondaire (rouge foncé) */
+  --accent3: #541A2E; /* Accent tertiaire (bordeaux) */
 
-  --bg: linear-gradient(180deg, rgba(2,16,36,0.9), rgba(5,38,89,0.95));
+  --bg: linear-gradient(180deg, rgba(22,22,47,0.92), rgba(36,47,73,0.96));
   --glass: rgba(255,255,255,0.03);
-  --muted: rgba(193,232,255,0.75);
-  --card-shadow: 0 14px 40px rgba(2,16,36,0.6);
-  --radius:14px;
-  --maxw:1100px;
+  --muted: rgba(255,255,255,0.7);
+  --card-shadow: 0 14px 40px rgba(22,22,47,0.6);
+  --radius: 14px;
+  --maxw: 1100px;
 }
 
 *{box-sizing:border-box}
@@ -41,7 +42,7 @@ body{background:var(--bg);color:var(--c200);-webkit-font-smoothing:antialiased}
 .hero-desc{color:var(--muted);max-width:56ch}
 .hero-ctas{display:flex;gap:12px;margin-top:16px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;font-weight:700;text-decoration:none;cursor:pointer;border:1px solid transparent}
-.btn.primary{background:linear-gradient(90deg,var(--c800),var(--c600));color:#fff;box-shadow:var(--card-shadow)}
+.btn.primary {background: linear-gradient(90deg, var(--accent), var(--accent2));color: #fff;}
 .btn.ghost{background:transparent;color:var(--c200);border:1px solid rgba(193,232,255,0.05)}
 .hero-socials{display:flex;gap:12px;margin-top:18px}
 .hero-socials a{font-size:18px}
@@ -105,7 +106,7 @@ body{background:var(--bg);color:var(--c200);-webkit-font-smoothing:antialiased}
 .skill-row{display:grid;grid-template-columns:140px 1fr 56px;gap:12px;align-items:center;margin:10px 0}
 .skill-title{color:var(--muted);font-weight:600}
 .skill-bar{height:14px;background:rgba(193,232,255,0.06);border-radius:999px;position:relative;overflow:hidden;border:1px solid rgba(193,232,255,0.02)}
-.skill-bar .fill{position:absolute;left:0;top:0;bottom:0;width:0%;background:linear-gradient(90deg,var(--c600),var(--c500));box-shadow:inset 0 0 8px rgba(193,232,255,0.08);transition:width 1s ease}
+.skill-bar .fill {background: linear-gradient(90deg, var(--accent2), var(--accent3));}
 .skill-value{font-weight:800;color:var(--c200)}
 
 /* PERSONAL SKILLS & TOOLS */
