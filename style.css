@@ -32,7 +32,7 @@ body{background:var(--bg);color:var(--c200);-webkit-font-smoothing:antialiased}
 
 /* HERO */
 .hero{position:relative;padding:72px 0 48px;min-height:70vh;display:flex;align-items:center}
-.hero-bg{position:absolute;inset:0;background-image:url('');background-size:cover;background-position:center;opacity:.5;filter:grayscale(.05);z-index:0}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1800&auto=format&fit=crop');background-size:cover;background-position:center;opacity:.5;filter:grayscale(.05);z-index:0}
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 400px;gap:32px;align-items:center}
 .eyebrow{color:var(--c200);font-weight:700;margin-bottom:6px}
 .hero-name{font-size:clamp(34px,6vw,56px);margin:0;line-height:1;letter-spacing:1px}
@@ -53,6 +53,7 @@ body{background:var(--bg);color:var(--c200);-webkit-font-smoothing:antialiased}
 
 /* ABOUT */
 .section{padding:64px 0}
+.about-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1800&auto=format&fit=crop');background-size:cover;background-position:center;opacity:.5;filter:grayscale(.05);z-index:0}
 .about-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
 .about-left h2{margin-top:0}
 .about-meta{margin:12px 0;color:var(--muted)}
@@ -74,6 +75,7 @@ body{background:var(--bg);color:var(--c200);-webkit-font-smoothing:antialiased}
 .tools-list{list-style:none;padding-left:0;color:var(--muted)}
 
 /* PROJECTS */
+.project-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1581091870622-8e8ec12a4f44?q=80&w=1800&auto=format&fit=crop');background-size:cover;background-position:center;opacity:.5;filter:grayscale(.05);z-index:0}
 .section-dark{background:linear-gradient(180deg, rgba(5,38,89,0.12), rgba(2,16,36,0.18))}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 .project .badge{position:absolute;top:12px;right:12px}
