@@ -33,7 +33,7 @@
 
   <!-- HERO -->
   <section id="hero" class="hero">
-    <div class="hero-bg" aria-hidden></div>
+    <div class="hero-bg" aria-hidden="true"></div>
     <div class="container hero-grid">
       <div class="hero-left">
         <p class="eyebrow">Bonjour — je suis</p>
@@ -47,15 +47,14 @@
         </div>
 
         <div class="hero-socials">
-          <a href="mailto:karimekg92@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope" style="color:#C1E8FF"></i></a>
-          <a href="https://github.com/ETENOT" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github" style="color:#000000"></i></a>
-          <a href="https://www.linkedin.com/in/karim-etenot-341033368/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" style="color:#5483B3"></i></a>
-          <a href="https://wa.me/65664690" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i></a>
+          <a href="mailto:karimekg92@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://github.com/ETENOT" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/karim-etenot-341033368/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://wa.me/24165664690" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
 
       <div class="hero-right">
-        <!-- Quick presentation card -->
         <div class="card quick">
           <h3>Je fais</h3>
           <ul>
@@ -68,9 +67,9 @@
     </div>
   </section>
 
-  <!-- A PROPOS -->
+  <!-- À PROPOS -->
   <section id="apropos" class="section about">
-    <div class="about-bg" aria-hidden></div>
+    <div class="about-bg" aria-hidden="true"></div>
     <div class="container about-grid">
       <div class="about-left">
         <h2>À propos</h2>
@@ -87,7 +86,6 @@
       </div>
 
       <div class="about-right">
-        <!-- ici tu mettras ton image (remplace src par ton lien) -->
         <div class="profile-wrap">
           <img id="profile-img" src="profil.jpg" alt="Photo de profil — ETENOT">
           <div class="profile-overlay"></div>
@@ -96,54 +94,23 @@
     </div>
   </section>
 
-  <!-- COMPETENCES -->
+  <!-- COMPÉTENCES -->
   <section id="competences" class="section skills">
     <div class="container">
       <h2>Compétences</h2>
       <p class="muted">Niveau estimé — valeurs animées au scroll</p>
 
       <div class="skills-grid">
-        <!-- Technique -->
         <div class="skill-block card">
           <h3>Techniques</h3>
-          <div class="skill-row">
-            <div class="skill-title">HTML</div>
-            <div class="skill-bar" data-percent="95"><span class="fill"></span></div>
-            <div class="skill-value">95%</div>
-          </div>
-
-          <div class="skill-row">
-            <div class="skill-title">CSS</div>
-            <div class="skill-bar" data-percent="92"><span class="fill"></span></div>
-            <div class="skill-value">92%</div>
-          </div>
-
-          <div class="skill-row">
-            <div class="skill-title">JavaScript</div>
-            <div class="skill-bar" data-percent="82"><span class="fill"></span></div>
-            <div class="skill-value">82%</div>
-          </div>
-
-          <div class="skill-row">
-            <div class="skill-title">PHP</div>
-            <div class="skill-bar" data-percent="75"><span class="fill"></span></div>
-            <div class="skill-value">75%</div>
-          </div>
-
-          <div class="skill-row">
-            <div class="skill-title">PostgreSQL (PgAdmin 4)</div>
-            <div class="skill-bar" data-percent="78"><span class="fill"></span></div>
-            <div class="skill-value">78%</div>
-          </div>
-
-          <div class="skill-row">
-            <div class="skill-title">C / C++</div>
-            <div class="skill-bar" data-percent="70"><span class="fill"></span></div>
-            <div class="skill-value">70%</div>
-          </div>
+          <div class="skill-row"><div class="skill-title">HTML</div><div class="skill-bar" data-percent="95"><span class="fill"></span></div><div class="skill-value">95%</div></div>
+          <div class="skill-row"><div class="skill-title">CSS</div><div class="skill-bar" data-percent="92"><span class="fill"></span></div><div class="skill-value">92%</div></div>
+          <div class="skill-row"><div class="skill-title">JavaScript</div><div class="skill-bar" data-percent="82"><span class="fill"></span></div><div class="skill-value">82%</div></div>
+          <div class="skill-row"><div class="skill-title">PHP</div><div class="skill-bar" data-percent="75"><span class="fill"></span></div><div class="skill-value">75%</div></div>
+          <div class="skill-row"><div class="skill-title">PostgreSQL</div><div class="skill-bar" data-percent="78"><span class="fill"></span></div><div class="skill-value">78%</div></div>
+          <div class="skill-row"><div class="skill-title">C / C++</div><div class="skill-bar" data-percent="70"><span class="fill"></span></div><div class="skill-value">70%</div></div>
         </div>
 
-        <!-- Personnelles -->
         <div class="skill-block card">
           <h3>Compétences personnelles</h3>
           <ul class="personal-list">
@@ -169,24 +136,18 @@
     <div class="container">
       <h2>Projets</h2>
       <p class="muted">Quelques travaux — certains en cours</p>
-
       <div class="projects-grid">
         <article class="project card">
           <div class="badge">En cours</div>
           <h4>StageTracker</h4>
           <p>Application web pour la gestion des stages : demandes, suivi et administration.</p>
-          <div class="project-actions">
-            <a href="https://github.com/ETENOT" target="_blank" class="btn ghost">Voir dépôt</a>
-          </div>
+          <div class="project-actions"><a href="https://github.com/ETENOT" target="_blank" class="btn ghost">Voir dépôt</a></div>
         </article>
-
         <article class="project card">
           <div class="badge">Web</div>
           <h4>Portfolio</h4>
           <p>Présentation personnelle, mode sombre/clair, responsive et interactions.</p>
-          <div class="project-actions">
-            <a href="#hero" class="btn primary">Vous êtes dessus</a>
-          </div>
+          <div class="project-actions"><a href="#hero" class="btn primary">Vous êtes dessus</a></div>
         </article>
       </div>
     </div>
@@ -198,34 +159,27 @@
       <div class="contact-card card">
         <h3>Contact</h3>
         <p class="muted">Un projet ? Une question ?</p>
-
         <div class="contact-links">
-          <a href="mailto:karimekg92@gmail.com"><i class="fa-solid fa-envelope" style="color:#C1E8FF"></i> karimekg92@gmail.com</a>
-          <a href="https://github.com/ETENOT" target="_blank"><i class="fa-brands fa-github" style="color:#000000"></i> GitHub</a>
-          <a href="https://www.linkedin.com/in/karim-etenot-341033368/" target="_blank"><i class="fa-brands fa-linkedin" style="color:#5483B3"></i> LinkedIn</a>
-          <a href="https://wa.me/65664690" target="_blank"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i> WhatsApp</a>
+          <a href="mailto:karimekg92@gmail.com"><i class="fa-solid fa-envelope"></i> karimekg92@gmail.com</a>
+          <a href="https://github.com/ETENOT" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/karim-etenot-341033368/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="https://wa.me/24165664690" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
-
       <form id="contact-form" class="contact-form card" onsubmit="event.preventDefault(); window.location.href = 'mailto:karimekg92@gmail.com?subject=Contact&body=' + encodeURIComponent(document.getElementById('contact-msg').value);">
         <label for="contact-name">Nom</label>
         <input id="contact-name" name="name" placeholder="Ton nom" required>
-
         <label for="contact-email">Email</label>
         <input id="contact-email" name="email" type="email" placeholder="Ton email" required>
-
         <label for="contact-msg">Message</label>
         <textarea id="contact-msg" placeholder="Ton message..." required></textarea>
-
         <button class="btn primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Envoyer</button>
       </form>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> ETENOT KHAYRE Karim Gloire — Tous droits réservés.</div>
-    </div>
+    <div class="container footer-inner">© <span id="year"></span> ETENOT KHAYRE Karim Gloire — Tous droits réservés.</div>
   </footer>
 
   <script src="script.js"></script>
