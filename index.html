@@ -3,15 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ETENOT — Portfolio</title>
-  <meta name="description" content="Portfolio — ETENOT KHAYRE Karim Gloire" />
+  <title>Portfolio — ETENOT KHAYRE Karim</title>
+  <meta name="description" content="Portfolio officiel de ETENOT KHAYRE Karim Gloire, développeur web et génie logiciel." />
   <meta name="theme-color" content="#021024" />
+
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- TOAST -->
+  <!-- Notification toast -->
   <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <!-- HEADER -->
@@ -33,9 +37,9 @@
 
   <!-- HERO -->
   <section id="hero" class="hero">
-    <div class="hero-bg" aria-hidden></div>
+    <div class="hero-bg" aria-hidden="true"></div>
     <div class="container hero-grid">
-      <div class="hero-left">
+      <div class="hero-left reveal">
         <p class="eyebrow">Bonjour — je suis</p>
         <h1 class="hero-name">ETENOT <span>KHAYRE</span></h1>
         <p class="hero-role">Développeur Web & Génie Logiciel — Licence 3</p>
@@ -48,14 +52,13 @@
 
         <div class="hero-socials">
           <a href="mailto:karimekg92@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope" style="color:#C1E8FF"></i></a>
-          <a href="https://github.com/ETENOT" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github" style="color:#000000"></i></a>
+          <a href="https://github.com/ETENOT" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github" style="color:#000"></i></a>
           <a href="https://www.linkedin.com/in/karim-etenot-341033368/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" style="color:#5483B3"></i></a>
           <a href="https://wa.me/65664690" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i></a>
         </div>
       </div>
 
-      <div class="hero-right">
-        <!-- Quick presentation card -->
+      <div class="hero-right reveal">
         <div class="card quick">
           <h3>Je fais</h3>
           <ul>
@@ -72,7 +75,7 @@
   <section id="apropos" class="section about">
     <div class="about-bg"></div>
     <div class="container about-grid">
-      <div class="about-left">
+      <div class="about-left reveal">
         <h2>À propos</h2>
         <p>Je suis <strong>ETENOT KHAYRE Karim Gloire</strong>, étudiant en Licence 3 Génie Logiciel. J'aime créer des applications web performantes et bien architecturées.</p>
         <p>Objectif : devenir développeur polyvalent capable de concevoir, déployer et maintenir des solutions robustes.</p>
@@ -86,8 +89,7 @@
         <a class="btn outline" href="CV_ETENOT.pdf" id="download-cv-2" download>📄 Télécharger mon CV</a>
       </div>
 
-      <div class="about-right">
-        <!-- ici tu mettras ton image (remplace src par ton lien) -->
+      <div class="about-right reveal">
         <div class="profile-wrap">
           <img id="profile-img" src="profil.jpg" alt="Photo de profil — ETENOT">
           <div class="profile-overlay"></div>
@@ -105,62 +107,57 @@
 
       <div class="skills-grid">
         <!-- Technique -->
-        <div class="skill-block card">
+        <div class="skill-block card reveal">
           <h3>Techniques</h3>
           <div class="skill-row">
             <div class="skill-title">HTML</div>
             <div class="skill-bar" data-percent="95"><span class="fill"></span></div>
-            <div class="skill-value">95%</div>
+            <div class="skill-value">0%</div>
           </div>
-
           <div class="skill-row">
             <div class="skill-title">CSS</div>
             <div class="skill-bar" data-percent="92"><span class="fill"></span></div>
-            <div class="skill-value">92%</div>
+            <div class="skill-value">0%</div>
           </div>
-
           <div class="skill-row">
             <div class="skill-title">JavaScript</div>
             <div class="skill-bar" data-percent="82"><span class="fill"></span></div>
-            <div class="skill-value">82%</div>
+            <div class="skill-value">0%</div>
           </div>
-
           <div class="skill-row">
             <div class="skill-title">PHP</div>
             <div class="skill-bar" data-percent="75"><span class="fill"></span></div>
-            <div class="skill-value">75%</div>
+            <div class="skill-value">0%</div>
           </div>
-
           <div class="skill-row">
-            <div class="skill-title">PostgreSQL (PgAdmin 4)</div>
+            <div class="skill-title">PostgreSQL</div>
             <div class="skill-bar" data-percent="78"><span class="fill"></span></div>
-            <div class="skill-value">78%</div>
+            <div class="skill-value">0%</div>
           </div>
-
           <div class="skill-row">
             <div class="skill-title">C / C++</div>
             <div class="skill-bar" data-percent="70"><span class="fill"></span></div>
-            <div class="skill-value">70%</div>
+            <div class="skill-value">0%</div>
           </div>
         </div>
 
-        <!--LANGUES-->
-        <div class="skill-block card">
-  <h3>Langues</h3>
-  <div class="skill-row">
-    <div class="skill-title">Français</div>
-    <div class="skill-bar" data-percent="100"><span class="fill"></span></div>
-    <div class="skill-value">100%</div>
-  </div>
-  <div class="skill-row">
-    <div class="skill-title">Anglais</div>
-    <div class="skill-bar" data-percent="65"><span class="fill"></span></div>
-    <div class="skill-value">65%</div>
-  </div>
-</div>
+        <!-- Langues -->
+        <div class="skill-block card reveal">
+          <h3>Langues</h3>
+          <div class="skill-row">
+            <div class="skill-title">Français</div>
+            <div class="skill-bar" data-percent="100"><span class="fill"></span></div>
+            <div class="skill-value">0%</div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-title">Anglais</div>
+            <div class="skill-bar" data-percent="65"><span class="fill"></span></div>
+            <div class="skill-value">0%</div>
+          </div>
+        </div>
 
         <!-- Personnelles -->
-        <div class="skill-block card">
+        <div class="skill-block card reveal">
           <h3>Compétences personnelles</h3>
           <ul class="personal-list">
             <li>Travail en équipe</li>
@@ -180,18 +177,18 @@
     </div>
   </section>
 
-  <!--HOBBIES & INTERETS-->
+  <!-- HOBBIES -->
   <section id="hobbies" class="section hobbies">
-  <div class="container">
-    <h2>Hobbies & Intérêts</h2>
-    <ul class="personal-list">
-      <li>Football</li>
-      <li>Jeux vidéo</li>
-      <li>Programmation créative</li>
-      <li>Musculation</li>
-    </ul>
-  </div>
-</section>
+    <div class="container reveal">
+      <h2>Hobbies & Intérêts</h2>
+      <ul class="personal-list">
+        <li>Football</li>
+        <li>Jeux vidéo</li>
+        <li>Programmation créative</li>
+        <li>Musculation</li>
+      </ul>
+    </div>
+  </section>
 
   <!-- PROJETS -->
   <section id="projets" class="section projects section-dark">
@@ -200,7 +197,7 @@
       <p class="muted">Quelques travaux — certains en cours</p>
 
       <div class="projects-grid">
-        <article class="project card">
+        <article class="project card reveal">
           <div class="badge">En cours</div>
           <h4>StageTracker</h4>
           <p>Application web pour la gestion des stages : demandes, suivi et administration.</p>
@@ -209,7 +206,7 @@
           </div>
         </article>
 
-        <article class="project card">
+        <article class="project card reveal">
           <div class="badge">Web</div>
           <h4>Portfolio</h4>
           <p>Présentation personnelle, mode sombre/clair, responsive et interactions.</p>
@@ -224,19 +221,18 @@
   <!-- CONTACT -->
   <section id="contact" class="section contact">
     <div class="container contact-grid">
-      <div class="contact-card card">
+      <div class="contact-card card reveal">
         <h3>Contact</h3>
         <p class="muted">Un projet ? Une question ?</p>
-
         <div class="contact-links">
           <a href="mailto:karimekg92@gmail.com"><i class="fa-solid fa-envelope" style="color:#C1E8FF"></i> karimekg92@gmail.com</a>
-          <a href="https://github.com/ETENOT" target="_blank"><i class="fa-brands fa-github" style="color:#000000"></i> GitHub</a>
+          <a href="https://github.com/ETENOT" target="_blank"><i class="fa-brands fa-github" style="color:#000"></i> GitHub</a>
           <a href="https://www.linkedin.com/in/karim-etenot-341033368/" target="_blank"><i class="fa-brands fa-linkedin" style="color:#5483B3"></i> LinkedIn</a>
           <a href="https://wa.me/65664690" target="_blank"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i> WhatsApp</a>
         </div>
       </div>
 
-      <form id="contact-form" class="contact-form card" onsubmit="event.preventDefault(); window.location.href = 'mailto:karimekg92@gmail.com?subject=Contact&body=' + encodeURIComponent(document.getElementById('contact-msg').value);">
+      <form id="contact-form" class="contact-form card reveal" onsubmit="event.preventDefault(); window.location.href = 'mailto:karimekg92@gmail.com?subject=Contact&body=' + encodeURIComponent(document.getElementById('contact-msg').value);">
         <label for="contact-name">Nom</label>
         <input id="contact-name" name="name" placeholder="Ton nom" required>
 
@@ -257,6 +253,7 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>

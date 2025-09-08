@@ -1,7 +1,7 @@
-// Year
+// Affiche l'année dynamique
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Mobile menu toggle
+// Menu mobile (hamburger)
 const burger = document.querySelector('.hamburger');
 const nav = document.querySelector('.nav');
 burger?.addEventListener('click', () => {
@@ -10,7 +10,7 @@ burger?.addEventListener('click', () => {
   burger.setAttribute('aria-expanded', visible ? 'true' : 'false');
 });
 
-// Toast helper
+// Gestion des notifications (Toast)
 const toast = document.getElementById('toast');
 let toastLock = false;
 function showToast(message, ms = 2200){
@@ -24,14 +24,14 @@ function showToast(message, ms = 2200){
   }, ms);
 }
 
-// CV download: show toast on click (both buttons)
+// Boutons de téléchargement CV
 document.querySelectorAll('#download-cv, #download-cv-2').forEach(btn=>{
   btn?.addEventListener('click', ()=>{
     showToast('📄 Téléchargement du CV lancé — merci !');
   });
 });
 
-// Reveal on scroll
+// Animation d'apparition (Reveal on scroll)
 const revealObserver = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){
@@ -44,14 +44,12 @@ document.querySelectorAll('.card, .hero-left, .hero-right, .about-left, .about-r
   revealObserver.observe(el);
 });
 
-// Animate skill bars and show percentage as they animate
+// Animation des barres de compétences avec pourcentage
 function animateSkillBars(){
   document.querySelectorAll('.skill-bar').forEach(bar=>{
     const fill = bar.querySelector('.fill');
     const percent = Number(bar.dataset.percent || 0);
-    // delay for smooth effect
     setTimeout(()=> fill.style.width = percent + '%', 150);
-    // animate number
     const valBox = bar.parentElement?.querySelector('.skill-value');
     if(valBox){
       let start = 0;
@@ -68,7 +66,7 @@ function animateSkillBars(){
   });
 }
 
-// Observe skills section, then animate once
+// Lance l'animation des compétences quand la section est visible
 const skillsSection = document.getElementById('competences');
 if(skillsSection){
   const obs = new IntersectionObserver((entries)=>{
@@ -80,7 +78,7 @@ if(skillsSection){
   obs.observe(skillsSection);
 }
 
-// Make profile image clickable (lightbox)
+// Agrandissement de la photo de profil (lightbox)
 const profileImg = document.getElementById('profile-img');
 if(profileImg){
   profileImg.style.cursor = 'zoom-in';
