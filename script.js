@@ -1,13 +1,13 @@
 // Affiche l'année dynamique
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Menu mobile (hamburger)
+// Mobile menu toggle (ajout d'une classe .open)
 const burger = document.querySelector('.hamburger');
 const nav = document.querySelector('.nav');
+
 burger?.addEventListener('click', () => {
-  const visible = nav.style.display !== 'flex';
-  nav.style.display = visible ? 'flex' : 'none';
-  burger.setAttribute('aria-expanded', visible ? 'true' : 'false');
+  nav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', nav.classList.contains('open') ? 'true' : 'false');
 });
 
 // Gestion des notifications (Toast)
